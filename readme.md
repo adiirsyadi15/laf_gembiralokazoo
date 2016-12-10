@@ -21,4 +21,4 @@ tujuan dibuat aplikasi :
 - kuliah di : STMIK AMIKOM YOGYAKARTA
 
 cp : 085601846636(wa)
-	- fb facebook.com/adiirsyadi15
+	- facebook.com/adiirsyadi15
