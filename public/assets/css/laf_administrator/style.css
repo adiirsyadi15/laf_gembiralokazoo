@@ -1,0 +1,45 @@
+body {
+    /*background: url(../../images/background1.png) repeat scroll top left;*/
+ }  
+
+.navkanan {
+	margin-right: 10px;
+}
+
+.imageicon{
+	height: 150px;
+	width:  150px;
+	margin-top: 5px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.navbarhome {
+	margin-left: 10px;
+
+}
+
+.juduldetail{
+	margin-top: 50px;
+	
+	text-align: center;
+}
+/*.thumbnail img { 
+	min-height:250px; 
+	height:50px; }*/
+
+@media screen and (max-width: 1000px) {
+.isi-konten{
+    margin-left: 0px;
+  }
+@media (max-width: 768px) {
+ 	/*.thumbnail img { 
+		min-height:150px; 
+		height:50px; 
+	}*/
+}
+.panelprofile{
+  margin-left: -20px;
+}
+

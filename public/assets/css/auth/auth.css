@@ -1,0 +1,52 @@
+body{
+    background: url(../../images/background1.png) no-repeat;
+    background-size: cover;
+}
+.special-form {
+    max-width: 500px;
+    margin: 5% auto 0;
+    background-color: #393d4e;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 3px 5px rgba(50, 50, 50, 0.2);
+    color: #fff;
+}
+.special-form img {
+    max-width: 100%;
+    width: 150px;
+    display: block;
+    margin: 0 auto;
+}
+.special-form hr {
+    opacity: .1;
+}
+
+.color-primary {
+    color: #26b2ad;
+}
+
+.special-form .btn {
+    padding: 20px;
+}
+.btn.btn-primary {
+    background-color: #26b2ad;
+}
+.btn.btn-wide {
+    width: 100%;
+}
+
+.special-form input {
+    padding: 15px 25px;
+}
+input.form-control {
+    
+    height: auto;
+}
+a {
+    color: #26b2ad;
+}
+
+a:hover {
+	text-decoration: none;
+    color: #fff;
+}

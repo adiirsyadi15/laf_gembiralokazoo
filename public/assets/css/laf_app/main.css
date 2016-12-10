@@ -1,0 +1,399 @@
+
+/*************************
+*******Typography******
+**************************/
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,500,700,100);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,800,300,600,700);
+@import url(http://fonts.googleapis.com/css?family=Abel);
+
+body {
+  font-family: "Helvetica Neue",'Roboto', Helvetica, Arial, sans-serif;
+  /*font-family: 'Lobster', cursive;*/
+  background-color:;
+  position: relative;
+  font-weight:400px;
+}
+/*Header*/
+
+/*step kehilangan*/
+#tambah_kehilangan fieldset:not(:first-of-type) {
+    display: none;
+  }
+
+.header-atas {
+  background: none repeat scroll 0 0 #f7f5f2;
+  font-size: 12px;
+  margin-bottom:20px;
+  background-color:#fff;
+  display: inline-block;
+  vertical-align: top;
+  width:100%;
+  border-bottom: solid 1px #ecf0f1;
+}
+.navbar{
+  margin-bottom:40px;
+}
+.navbarmenu{
+  margin-top: 45px;
+    margin-bottom: -40px;
+}
+.dropdown-sign{
+  text-decoration:none;
+  background-color:transparent;
+  color:#6d6e70;
+  font-size: 16px;
+}
+
+.head_title {
+  padding-right:10px;
+}
+
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+
+.btn-block{
+  background-color:#89c1c0;
+  box-shadow:3px;
+  color:#fff;
+}
+.btn-block:hover{
+  background-color:#6d9796;
+  color:#fff;
+}
+
+
+fa {
+    padding-right: 5px;
+}
+
+
+.navbar-collapse{
+  /*background: rgba(164, 202, 169, 0.17);*/
+  decoretion:none;
+    border-color: none;
+    border-radius: 5px;
+    margin-top: -30px;
+}
+
+.chat-text{
+  font-size:16px;
+  font:bold;
+  padding-left:20px;
+}
+.chat-text a{
+      text-shadow: 0 -1px 1px #6d9796;
+  font-size:16px;
+  margin-left:30px;
+  background: #89c1c0;
+  color:#fff;
+}
+
+.chat-text a:hover{
+  text-shadow: 0 -1px 1px #6d9796;
+  font-size:16px;
+  margin-left:30px;
+  background: #6d9796;
+  color:#fff;
+}
+
+.contact_chat{
+  background: #f2f2f2;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-bottom: 4px solid #89c1c0;
+  display: inline-block;
+  vertical-align: top;
+  width:100%;
+  margin-top:20px;
+  margin-bottom:-10px;
+}
+
+
+/*conten chat*/
+
+.content{
+  background-image:url(../images/service.jpg);
+  display: inline-block;
+  vertical-align: top;
+  width:100%;
+  background-repeat:no-repeat;
+  background-position:center-top;
+}
+.images_header{
+  width: 20%;
+  margin: 0px -30px 0px 0px;
+}
+
+.images_signout{
+  width:90%;
+}
+.signout{
+  background:#f7f5f2;
+  border-top:1px solid ##f2f2f2;
+  padding-bottom:10px;
+  margin-bottom:-15px;
+  padding-top:10px;
+}
+
+
+
+
+/*admin tampil*/ 
+.selamat_datang .row img{
+  width:500px
+}
+.selamat_datang .row h2{
+  text-align:center;
+  
+  font-family: 'arial';
+  color:#89c1c0;
+}
+
+.btn-navbar {
+     background: none; 
+     border: none; 
+     color: #34495e; 
+     margin: 18px 15px 14px; 
+     text-shadow: none; 
+    display: none;
+}
+
+
+
+
+.navbar-header .btn-navbar:before {
+    content: "\e00c";
+    font-family: "Flat-UI-Icons";
+    font-size: 22px;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+  }
+
+#bgimg {
+    height: 672px;
+    width: 100%;
+    margin-top: -20px;
+    position: fixed;
+    background: url(../../../images/bg-image.jpg) center no-repeat;
+    background-size: cover;
+    z-index: -100;
+  }
+
+#search{
+    height: 600px;
+}
+.searchtitle{
+  /*padding-top: 140px;*/
+  margin-top: 180px;
+}
+.searchtitle h3{
+    font-size: 30px;
+    color: white;
+    background: rgba(0, 0, 0, 0.41) ;
+    padding: 20px;
+    border-radius: 10px;
+
+  margin-right: 220px;
+  margin-left: 220px;
+}
+.searchform{
+      font-size: 18px;
+}
+
+#findlf{
+    background-color: white;
+    padding-bottom: 48px;
+    text-align: center;
+}
+.affix {
+      top: 0;
+      width: 100%;
+      -webkit-transition: all .5s ease-in-out;
+      transition: all .5s ease-in-out;
+      background-color: rgba(105, 98, 98, 0.47);
+      border-color: rgb(111, 95, 94);
+
+  }
+  .affix a {
+      padding: 15px !important;
+      -webkit-transition: all .5s ease-in-out;
+      transition: all .5s ease-in-out;
+  }
+  .affix-top a {
+      padding: 25px !important;
+  }
+  .affix + .container{
+      padding-top: 95px;
+  }
+
+  .navbar{
+    background: rgba(56, 53, 53, 0.89);
+  }
+
+
+
+ .navbar-nav li a{
+    color: white;
+    font-size: 14px;
+    margin-top: 40px;
+}
+.navbar-nav li a:hover{
+    
+    font-size: 14px;
+    margin-top: 40px;
+    padding-bottom: 20px; 
+    color: #000;
+    background: #26b2ad;
+  }
+
+
+  .navbar-brand {
+     float: none; 
+  }
+
+
+
+.dropdown-menu li a{
+  text-decoration: none;
+  color: #000;
+  margin-top: -10px;
+}
+
+.dropdown-menu li a:hover{
+  text-decoration: none;
+  color: #fff;
+  margin-top: -10px;
+}
+.lupapassword h5 a{
+  text-decoration:none;
+  color:#6d6e70;
+  font-size: 12px;
+  margin-top:2px;
+  margin-left: -25px;
+}
+.lupapassword  h5 a:hover{
+  text-decoration:none;
+  background: none;
+  font-size: 12px;
+  color:red;
+}
+
+.judul{
+  margin-bottom: 50px
+}
+.judul h1{
+  font-family: 'Lobster', cursive;
+  margin-top: 50px
+}
+
+.feature-icon img{
+  width: 50%;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  margin-bottom: 10px;
+}
+
+.feature-icon img:hover {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#newlost {
+  padding-top: 20px;
+  background-color: #eee;
+}
+#newfound {
+  padding-top: 20px;
+  background-color: #fff;
+}
+
+#proses {
+  padding-top: 20px;
+  background-color: #fff;
+}
+.section-subheading{
+  padding-bottom: 60px;
+  background-color: #fff;
+}
+footer{
+    color: #fff;
+    margin-bottom: 0;
+    background: #303539;
+    line-height: 40px;
+    text-transform: uppercase;
+    text-transform: none;
+  }
+footer ul.quicklinks {
+    font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.list-inline li a{
+    color: #fff;
+}
+.list-inline li a:hover{
+  text-decoration:none;
+    color: #337ab7;
+}
+
+
+.navbartitle{
+  color: #fff;
+}
+
+.navbartitle:hover{
+  color: #ccc;
+}
+
+.navbartitle h1{
+  margin-top: -6px;
+}
+
+
+.copyright i a{
+  color: #26b2ad;
+}
+
+
+.copyright i a:hover{
+  text-decoration: none;
+  color: #fff;
+}
+
+/*setting mobile*/
+@media (max-width: 768px) {
+  .btn-navbar {
+    float: right;
+    display: block;
+    margin-right: 0;
+    padding-bottom: 0;
+    color: #26b2ad;
+    }
+    .header{
+      background: #fff;
+    }
+    .navbar-collapse {
+    background: #fff;
+  }
+  .navbar-collapse ul li a{
+    color: #000;
+    margin-top: 0px;
+  }
+  .searchtitle h3 {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+}
