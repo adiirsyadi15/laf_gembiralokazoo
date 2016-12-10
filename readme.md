@@ -8,3 +8,17 @@ tujuan dibuat aplikasi :
 - mempermudah pengunjung untuk mengecekan penemuan barang, tanpa harus sms atau kontak langsung ke petugas keamanan
 - membatu pengunjung membuat laporan kehilangan
 - membantu pihak gembiraloka untuk merekap data kehilangan maupun penemuan
+
+##Cara Install
+- copy semua file ke xampp
+- buat database
+- import data sql dari file
+- rubah file .env (setting database name)
+
+##Author
+- Nama: Mukhlis Adi Irsyadi
+- Umur : 21 tahun
+- kuliah di : STMIK AMIKOM YOGYAKARTA
+
+cp : 085601846636(wa)
+	- fb facebook.com/adiirsyadi15
