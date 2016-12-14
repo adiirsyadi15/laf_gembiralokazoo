@@ -65,7 +65,7 @@ class IdentitasPemilikController extends Controller
         if(Input::hasFile('gambar_1')){
             $date = new DateTime();
             $datetosting = $date->format('Y-m-d');
-            $destination_identitas = base_path() . '/public/images/identitas';
+            $destination_identitas = public_path() . DIRECTORY_SEPARATOR .  'images/identitas';
 
             $namagambar = $request->file('gambar_1')->getClientOriginalName();
 
@@ -85,7 +85,7 @@ class IdentitasPemilikController extends Controller
         if(Input::hasFile('gambar_2')){
             $date = new DateTime();
             $datetosting = $date->format('Y-m-d');
-            $destination_identitas = base_path() . '/public/images/identitas';
+            $destination_identitas = public_path() . DIRECTORY_SEPARATOR . 'images/identitas';
 
             $namagambar = $request->file('gambar_2')->getClientOriginalName();
 
@@ -138,7 +138,7 @@ class IdentitasPemilikController extends Controller
         if(Input::hasFile('gambar_1')){
             $date = new DateTime();
             $datetosting = $date->format('Y-m-d');
-            $destination_identitas = base_path() . '/public/images/identitas';
+            $destination_identitas = public_path() . DIRECTORY_SEPARATOR . 'images/identitas';
 
             $namagambar = $request->file('gambar_1')->getClientOriginalName();
 
@@ -161,7 +161,7 @@ class IdentitasPemilikController extends Controller
         if(Input::hasFile('gambar_2')){
             $date = new DateTime();
             $datetosting = $date->format('Y-m-d');
-            $destination_identitas = base_path() . '/public/images/identitas';
+            $destination_identitas = public_path() . DIRECTORY_SEPARATOR . 'images/identitas';
 
             $namagambar = $request->file('gambar_2')->getClientOriginalName();
 

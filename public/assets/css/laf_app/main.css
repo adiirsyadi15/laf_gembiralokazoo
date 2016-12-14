@@ -7,7 +7,7 @@
 @import url(http://fonts.googleapis.com/css?family=Abel);
 
 body {
-  font-family: "Helvetica Neue",'Roboto', Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   /*font-family: 'Lobster', cursive;*/
   background-color:;
   position: relative;
@@ -259,7 +259,30 @@ fa {
      float: none; 
   }
 
+/*  foto profile modal css*/
+#ModalFotoProfile .modal-content {
+    display: inline-block;
+    text-align: center;   
+    background: #fff;
+}
 
+#ModalFotoProfile .close {
+    opacity: 1;
+    color: rgb(255, 255, 255);
+    background-color: rgb(25, 25, 25);
+    padding: 5px 8px;
+    border-radius: 30px;
+    border: 2px solid rgb(255, 255, 255);
+    position: absolute;
+    top: -15px;
+    right: -20px;
+    z-index:1032;
+}
+#ModalFotoProfile .modal-header {
+    padding: 0px;
+    border-bottom: none;
+}
+/*  tutup foto profile modal css*/
 
 .dropdown-menu li a{
   text-decoration: none;

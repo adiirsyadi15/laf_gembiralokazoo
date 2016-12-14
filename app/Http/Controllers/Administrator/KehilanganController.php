@@ -127,7 +127,7 @@ class KehilanganController extends Controller
             $foto1->save();
 
 
-            $destination_barang1 = base_path() . '/public/images/fotobarang';
+            $destination_barang1 = public_path() . DIRECTORY_SEPARATOR . 'images/fotobarang';
 
             $b->file('foto_barang_1')->move($destination_barang1, $foto_barang_1_baru);
         }else{
@@ -149,7 +149,7 @@ class KehilanganController extends Controller
             $foto2->nama= $foto_barang_2_baru;
             $foto2->save();
 
-            $destination_barang2 = base_path() . '/public/images/fotobarang';
+            $destination_barang2 = public_path() . DIRECTORY_SEPARATOR . 'images/fotobarang';
 
             $b->file('foto_barang_2')->move($destination_barang2, $foto_barang_2_baru);
         }
@@ -165,7 +165,7 @@ class KehilanganController extends Controller
             $foto3->nama= $foto_barang_3_baru;
             $foto3->save();
 
-            $destination_barang3 = base_path() . '/public/images/fotobarang';
+            $destination_barang3 = public_path() . DIRECTORY_SEPARATOR . 'images/fotobarang';
 
             $b->file('foto_barang_3')->move($destination_barang3, $foto_barang_3_baru);
         }
@@ -187,13 +187,13 @@ class KehilanganController extends Controller
 
 
     
-    public function show($id)
+    public function show($id_proses)
     {
         $kehilangans = DB::table('proses')
             ->join('kehilangans', 'kehilangans.id_proses', '=', 'proses.id_proses')
             ->join('kejadians', 'proses.id_kejadian', '=', 'kejadians.id_kejadian')
             ->join('pemiliks', 'proses.id_pemilik', '=', 'pemiliks.id_pemilik')
-            ->where('proses.id_proses', '=', $id)
+            ->where('proses.id_proses', '=', $id_proses)
             ->groupBy('proses.id_proses')
             ->get();
             // dd($kehilangans);
@@ -207,7 +207,7 @@ class KehilanganController extends Controller
         	$umur = $umur->y;
 
         	// get id kehilangan
-        	$id_proses = $k->id_proses;
+        	// $id_proses = $k->id_proses;
         }
         // dd($umur);
 
@@ -219,22 +219,56 @@ class KehilanganController extends Controller
             ->select('barangs.id_barang','barangs.nama as nama_barang', 'kategoris.nama as kategori','barangs.ciri_ciri', 'kehilangans.status_kehilangan')
             ->get();
 
+
+
+
+        // $barangs->toArray();
+
+        // dd($barangs);
+
         // $car = array("a","c","ss");
         // dd($barangs, $car);
-        $barangs = Barang::get();
+        // $barangs = Barang::get();
 
         // dd($barangs, $barang_array);
         // dd($barang_array);
-        foreach ($barangs as $i => $b ) {
+  // foreach ($arrays as $i => $b ) {
             
-            $fotos = DB::table('fotos')
-            ->where('fotos.id_barang', '=', $b->id_barang)
-            ->get();
-            $barangs[$i]['gambar'] = $fotos;
-        }
-        dd($barangs);
+  //           $fotos = DB::table('fotos')
+  //           ->where('fotos.id_barang', '=', $b->id_barang)
+  //           ->get();
+  //           $arrays[$i]['gambar'] = $fotos;
+  //       }
+
+  //       dd($barangs);
         
-        return view('laf_app_administrator.kehilangan.show', compact('kehilangans', 'umur', 'barangs', 'fotos'));
+
+
+        // foreach($barangs as $b )
+        // {
+        //     $barang_array[] =  (array) $b;
+        // }
+
+        // dd($barang_array[0]['id_barang']);
+
+        // foreach ($barang_array as $i => $b ) {
+        //     // $barang_array[$i]['id_barang'];
+
+        //     $fotos[] = (array)DB::table('fotos')
+        //     ->where('fotos.id_barang', '=', $barang_array[$i]['id_barang'])
+        //     ->select('fotos.nama')
+        //     ->get();
+        //     $barang_array[$i]['gambar'] = $fotos;
+        // }
+        
+        // dd($fotos, $barang_array);
+
+        // foreach ($barang_array as $key => $b) {
+        //     echo $b->nama;
+        // }
+
+      
+        return view('laf_app_administrator.kehilangan.show', compact('kehilangans', 'umur', 'barangs', 'id_proses'));
     }
 
     // cetak laporan kehilangan

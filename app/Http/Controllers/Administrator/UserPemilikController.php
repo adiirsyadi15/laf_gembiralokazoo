@@ -97,7 +97,7 @@ class UserPemilikController extends Controller
         if(Input::hasFile('foto')){
             $date = new DateTime();
             $datetosting = $date->format('Y-m-d-H-i-s');
-            $destination_fotoprofile = base_path() . '/public/images/fotoprofile';
+            $destination_fotoprofile = public_path() . DIRECTORY_SEPARATOR . 'images/fotoprofile';
             $foto_pemilik = $request->file('foto')->getClientOriginalName();
             $foto_pemilik_baru = $role.'_'.$datetosting.'_'.$foto_pemilik;
              $pemilik->foto_profile= $foto_pemilik_baru;
@@ -187,7 +187,7 @@ class UserPemilikController extends Controller
         if(Input::hasFile('foto')){
             $date = new DateTime();
             $datetosting = $date->format('Y-m-d-H-i-s');
-            $destination_fotoprofile = base_path() . '/public/images/fotoprofile';
+            $destination_fotoprofile = public_path() . DIRECTORY_SEPARATOR . 'images/fotoprofile';
 
             // mendapatka nama file foto yang akan di delete
             $pemilik = Pemilik::where('username', $id)->firstOrFail();
@@ -216,14 +216,14 @@ class UserPemilikController extends Controller
         $pemilik = Pemilik::where('username', $id)->firstOrFail();
         // delete foto dari sistem
         if($pemilik->foto_profile != "user.png"){
-            $destination_fotoprofile = base_path() . '/public/images/fotoprofile';
+            $destination_fotoprofile = public_path() . DIRECTORY_SEPARATOR . 'images/fotoprofile';
             File::delete($destination_fotoprofile.'/'.$pemilik->foto_profile);
         }
 
 
         $del_identitas =  Identitas::where('id_pemilik', $pemilik->id_pemilik)->delete();
         // dd($del_identitas);
-        $del_petugas = Pemilik::where('username', $id)->delete();
+        $del_pemilik = Pemilik::where('username', $id)->delete();
         $del_user = User::where('username', $id)->delete();
 
 
@@ -246,7 +246,7 @@ class UserPemilikController extends Controller
 
         if($jumlahidentitas >= 1){
             if($verifikasi == 1 ){
-            $verifikasi = 0;
+                $verifikasi = 0;
             }else{
                 $verifikasi = 1;
             }

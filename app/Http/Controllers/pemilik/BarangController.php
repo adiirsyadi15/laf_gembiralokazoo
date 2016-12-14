@@ -71,7 +71,7 @@ class BarangController extends Controller
             $foto1->save();
 
 
-            $destination_barang1 = base_path() . '/public/images/fotobarang';
+            $destination_barang1 = public_path() . DIRECTORY_SEPARATOR . 'images/fotobarang';
 
             $request->file('foto_barang_1')->move($destination_barang1, $foto_barang_1_baru);
         }else{
@@ -93,7 +93,7 @@ class BarangController extends Controller
             $foto2->nama= $foto_barang_2_baru;
             $foto2->save();
 
-            $destination_barang2 = base_path() . '/public/images/fotobarang';
+            $destination_barang2 =public_path() . DIRECTORY_SEPARATOR . 'images/fotobarang';
 
             $request->file('foto_barang_2')->move($destination_barang2, $foto_barang_2_baru);
         }
@@ -109,16 +109,14 @@ class BarangController extends Controller
             $foto3->nama= $foto_barang_3_baru;
             $foto3->save();
 
-            $destination_barang3 = base_path() . '/public/images/fotobarang';
+            $destination_barang3 = public_path() . DIRECTORY_SEPARATOR . 'images/fotobarang';
 
             $request->file('foto_barang_3')->move($destination_barang3, $foto_barang_3_baru);
         }
 
 
 
-        \Flash::success('berhasil menambah data barang');
-
-       
+        \Flash::success('berhasil menambah data barang');       
         return redirect()->route('pemilik.kehilangan.detail', [$username, $id_proses]);
     }
 

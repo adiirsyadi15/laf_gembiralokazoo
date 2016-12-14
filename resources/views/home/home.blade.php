@@ -4,7 +4,8 @@
 @include('home.search')
 @include('home.akses_laf')
 @include('home.kehilangan_baru')
-@include('home.newfound')
+
+@include('home.penemuan_baru')
 @include('home.proseskehilangan')
 @include('home.footer')
 @endsection

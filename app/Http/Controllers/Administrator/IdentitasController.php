@@ -36,7 +36,7 @@ class IdentitasController extends Controller
         if(Input::hasFile('gambar')){
             $date = new DateTime();
             $datetosting = $date->format('Y-m-d');
-            $destination_identitas = base_path() . '/public/images/identitas';
+            $destination_identitas = public_path() . DIRECTORY_SEPARATOR .  'images/identitas';
 
             $namagambar = $request->file('gambar')->getClientOriginalName();
 
@@ -69,7 +69,7 @@ class IdentitasController extends Controller
         if(Input::hasFile('gambar')){
             $date = new DateTime();
             $datetosting = $date->format('Y-m-d-H-i-s');
-            $destination_identitas = base_path() . '/public/images/identitas';
+            $destination_identitas = public_path() . DIRECTORY_SEPARATOR . 'images/identitas';
 
             $del = Identitas::where('id_identitas', $id)->firstOrFail();
             // delete foto dari sistem

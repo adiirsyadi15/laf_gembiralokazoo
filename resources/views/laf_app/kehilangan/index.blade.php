@@ -10,16 +10,23 @@
         	<div class="row">
           		<div class="col-md-12">
 		            <ol class="breadcrumb">
-					     <li>Kehilangan -- Kategori: <a href="#">Semua</a></li>
-						 <span class="pull-right">Lihat penemuan:
-						  <a href="#" class="btn btn-default btn-xs
-						    ">ditemukan</a> |
-						  <a href="#" class="btn btn-default btn-xs
-						    ">belum ditemukan</a>
+						<li>Kehilangan -- Kategori: <a href="{{ url('kehilangan') }}">Semua</a></li>
+						<span class="pull-right">Lihat penemuan:
+							<a href="{{ url('kehilangan?status=ditemukan') }}" class="btn btn-default btn-xs
+							">ditemukan</a> |
+							<a href="{{ url('kehilangan?status=hilang') }}" class="btn btn-default btn-xs
+							">belum ditemukan</a>
+							<a href="#filter" class="btn btn-info btn-xs" data-toggle="collapse" aria-expanded="false" >Filter</a>
+
 						</span>
 					</ol>
           		</div>
-
+          		<div class="col-md-12">
+          			<!-- collapse dari link filer -->
+          			<div class="collapse" id="filter">
+					 	@include('laf_app.kehilangan._filter')
+					</div>
+          		</div>
                 
 	            @foreach($kehilangans as $k)
                 <div class="col-md-6">
@@ -41,11 +48,7 @@
 
 					</div>
 	            </div>
-	            @endforeach
-
-                     
-          
-          
+	            @endforeach          
         </div>
         <div class="pull-right">
             <div class="paginate">

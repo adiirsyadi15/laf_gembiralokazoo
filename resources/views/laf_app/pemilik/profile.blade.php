@@ -22,11 +22,14 @@
      <hr>
         @include('flash::message')
       <div class="col-sm-6 col-md-4">
-          <div class="thumbnail ">
+      <a href="#" data-toggle="modal" data-target="#ModalFotoProfile">
+        <div class="thumbnail ">
             <img src="{{ url('images/fotoprofile/'.$pemiliks->foto_profile) }}"  class="img-rounded" alt="Generic placeholder thumbnail">
             <div class="caption">
             </div>
           </div>
+      </a>
+          
         </div>
         <div class="col-md-8 formsetting">
           <h5>Informasi Umum</h5>
@@ -139,6 +142,23 @@
             </div>
           </form>
         </div>
+
+
+    <!-- modal foto profile -->
+    <div class="modal fade" id="ModalFotoProfile" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+          <div class="modal-body" id="showImg">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- tutup modal foto profile -->
+    
     </div>
   </div>
   

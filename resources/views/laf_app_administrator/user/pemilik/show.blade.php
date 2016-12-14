@@ -56,12 +56,11 @@
         <hr>
         @include('flash::message')
         <div class="col-sm-6 col-md-3">
-          <div class="thumbnail ">
-            <img src="{{ url('images/fotoprofile/'.$p->foto_profile) }}"  class="img-rounded fotoadmin" alt="Generic placeholder thumbnail">
-            <div class="caption">
-                <!-- <button type="button" class="btn btn-success pull-rigth">EDIT FOTO</button> -->
+          <a href="#" data-toggle="modal" data-target="#ModalFotoProfile">
+            <div class="thumbnail ">
+              <img src="{{ url('images/fotoprofile/'.$p->foto_profile) }}"  class="img-rounded fotoadmin media-object" alt="{{ $p->foto_profile }}">
             </div>
-          </div>
+          </a>
         </div>
 
         <div class="col-md-9">
@@ -333,6 +332,22 @@
           
           
       <!-- @endif -->
+
+      <!-- modal foto profile -->
+      <div class="modal fade" id="ModalFotoProfile" role="dialog">
+        <div class="modal-dialog">
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body" id="showImg">
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- tutup modal foto profile -->
+
         
       </div>
     </div>

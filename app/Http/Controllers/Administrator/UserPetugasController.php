@@ -84,7 +84,8 @@ class UserPetugasController extends Controller
         if(Input::hasFile('foto')){
             $date = new DateTime();
             $datetosting = $date->format('Y-m-d-H-i-s');
-            $destination_fotoprofile = base_path() . '/public/images/fotoprofile';
+            // $destination_fotoprofile = base_path() . '/public/images/fotoprofile';
+            $destination_fotoprofile = public_path() . DIRECTORY_SEPARATOR . 'images/fotoprofile';
             $foto_petugas = $request->file('foto')->getClientOriginalName();
             $foto_petugas_baru = $role.'_'.$datetosting.'_'.$foto_petugas;
 			$petugas->foto_profile= $foto_petugas_baru;
@@ -147,7 +148,7 @@ class UserPetugasController extends Controller
         $petugas->no_hp= $no_hp;
         if(Input::hasFile('foto')){
             // folder tempat menyimpan file foto
-            $destination_fotoprofile = base_path() . '/public/images/fotoprofile';
+            $destination_fotoprofile = public_path() . DIRECTORY_SEPARATOR . 'images/fotoprofile';
             // mendapatka nama file foto yang akan di delete
             $petugas = Petugas::where('username', $id)->firstOrFail();
             // delete foto dari sistem
@@ -189,8 +190,8 @@ class UserPetugasController extends Controller
         $petugas = Petugas::where('username', $id)->firstOrFail();
         
         // delete foto dari sistem
-        if($pemilik->foto_profile != "user.png"){
-            $destination_fotoprofile = base_path() . '/public/images/fotoprofile';
+        if($petugas->foto_profile != "user.png"){
+            $destination_fotoprofile = public_path() . DIRECTORY_SEPARATOR . 'images/fotoprofile';
             File::delete($destination_fotoprofile.'/'.$petugas->foto_profile);
             // slesai delete file 
         }

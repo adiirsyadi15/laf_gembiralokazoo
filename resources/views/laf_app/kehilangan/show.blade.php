@@ -11,12 +11,7 @@
           		<div class="col-md-12">
 		            <ol class="breadcrumb">
 					     <li>Kehilangan -- Kategori: <a href="#">Semua</a></li>
-						 <span class="pull-right">Lihat penemuan:
-						  <a href="#" class="btn btn-default btn-xs
-						    ">ditemukan</a> |
-						  <a href="#" class="btn btn-default btn-xs
-						    ">belum ditemukan</a>
-						</span>
+						 
 					</ol>
           		</div>
 

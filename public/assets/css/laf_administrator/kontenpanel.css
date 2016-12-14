@@ -3,6 +3,10 @@
 	padding-right: 20px; 
 }
 
+.datapemilik .form-horizontal .form-group{
+    margin-bottom: 2px;
+}
+
 .form-group label{
 	text-decoration: none;
 	color: #000;
@@ -103,7 +107,7 @@
 	width: 20px;
 }
 
-/*  image lihat di modal*/
+/*  gambar identitas di modal*/
 #lightbox .modal-content {
     display: inline-block;
     text-align: center;   
@@ -122,4 +126,30 @@
     
     z-index:1032;
 }
-/*  tutup image lihat di modal*/
+/*  gambar identitas di modal*/
+
+
+/*  foto profile modal css*/
+#ModalFotoProfile .modal-content {
+    display: inline-block;
+    text-align: center;   
+    background: #fff;
+}
+
+#ModalFotoProfile .close {
+    opacity: 1;
+    color: rgb(255, 255, 255);
+    background-color: rgb(25, 25, 25);
+    padding: 5px 8px;
+    border-radius: 30px;
+    border: 2px solid rgb(255, 255, 255);
+    position: absolute;
+    top: -15px;
+    right: -20px;
+    z-index:1032;
+}
+#ModalFotoProfile .modal-header {
+    padding: 0px;
+    border-bottom: none;
+}
+/*  tutup foto profile modal css*/

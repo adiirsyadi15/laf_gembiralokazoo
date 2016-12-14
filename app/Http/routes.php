@@ -12,8 +12,17 @@ Route::group(['middleware' => 'web'], function () {
 	
 	Route::get('/home', 'HomeController@index');
 
+	// kehilangan user umum
+	Route::resource('/kehilangan', 'KehilanganController',['only' =>['index', 'show']]);
+	// penemuan user umum
+	Route::resource('/penemuan', 'PenemuanController',['only' =>['index', 'show']]);
 
-	Route::resource('/kehilangan', 'KehilanganController');
+	// filter kehilangan user umum
+	Route::post('kehilangan/filter', ['as' => 'kehilangan.filter', 'uses' => 'KehilanganController@filter']);
+
+	// filter penemuan user umum
+	Route::post('penemuan/filter', ['as' => 'penemuan.filter', 'uses' => 'PenemuanController@filter']);
+	
 
 	// Route untuk user akses Admin
 	Route::group(['middleware' => ['auth','admin']], function () {
@@ -54,15 +63,44 @@ Route::group(['middleware' => 'web'], function () {
 			]);
 		// pengelolaan identitas pemilik
 		Route::resource('identitas', 'Administrator\IdentitasController',['only' =>['store', 'update']]);
-		// pengelolaan identitas pemilik
+		// pengelolaan kehilangan
 		Route::resource('pengolahan/kehilangan', 'Administrator\KehilanganController');
 
 		// cetak laporan kehilangan
 		Route::get('pengolahan/kehilangan/{id_proses}/cetak', ['as' => 'pengolahan.kehilangan.cetak', 'uses' => 'Administrator\KehilanganController@cetak']);
 
-		// edit kejadian
+
+		// pengelolaan penemuan
+		Route::resource('pengolahan/penemuan', 'Administrator\PenemuanController');
+
+		// edit kejadian kehilangan
 		Route::get('pengolahan/kehilangan/{id_proses}/{id_kejadian}/editkejadian', ['as' => 'pengolahan.kehilangan.editkejadian', 'uses' => 'Administrator\KejadianController@EditKejadian']);
 		Route::patch('pengolahan/kehilangan/{id_proses}/{id_kejadian}/updatekejadian', ['as' => 'pengolahan.kehilangan.updatekejadian', 'uses' => 'Administrator\KejadianController@UpdateKejadian']);
+
+		// edit kejadian penemuan
+		Route::get('pengolahan/penemuan/{id_proses}/{id_kejadian}/editkejadian', ['as' => 'pengolahan.penemuan.editkejadian', 'uses' => 'Administrator\KejadianController@EditKejadian']);
+		Route::patch('pengolahan/penemuan/{id_proses}/{id_kejadian}/updatekejadian', ['as' => 'pengolahan.penemuan.updatekejadian', 'uses' => 'Administrator\KejadianController@UpdateKejadian']);
+
+
+		// tambah kehilangan barang
+		Route::get('pengolahan/kehilangan/{id_proses}/tambahbarang', ['as' => 'pengolahan.kehilangan.tambah_barang', 'uses' => 'Administrator\BarangController@create']);
+		Route::post('pengolahan/kehilangan/{id_proses}/simpanbarang', ['as' => 'pengolahan.kehilangan.simpan_barang', 'uses' => 'Administrator\BarangController@store']);
+
+		// edit kehilangan barang
+		Route::get('pengolahan/kehilangan/{id_proses}/{id_barang}/editbarang', ['as' => 'pengolahan.kehilangan.edit_barang', 'uses' => 'Administrator\BarangController@edit']);
+		Route::post('pengolahan/kehilangan/{id_proses}/{id_barang}/updatebarang', ['as' => 'pengolahan.kehilangan.update_barang', 'uses' => 'Administrator\BarangController@update']);
+
+
+
+		// tambah penemuan barang
+		Route::get('pengolahan/penemuan/{id_proses}/tambahbarang', ['as' => 'pengolahan.penemuan.tambah_barang', 'uses' => 'Administrator\BarangController@create']);
+		Route::post('pengolahan/penemuan/{id_proses}/simpanbarang', ['as' => 'pengolahan.penemuan.simpan_barang', 'uses' => 'Administrator\BarangController@store']);
+
+		// edit penemuan barang
+		Route::get('pengolahan/penemuan/{id_proses}/{id_barang}/editbarang', ['as' => 'pengolahan.penemuan.edit_barang', 'uses' => 'Administrator\BarangController@edit']);
+		Route::post('pengolahan/penemuan/{id_proses}/{id_barang}/updatebarang', ['as' => 'pengolahan.penemuan.update_barang', 'uses' => 'Administrator\BarangController@update']);
+
+
 	});
 
 	// Route untuk user akses pemilik

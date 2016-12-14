@@ -48,7 +48,8 @@
     
         <div class="profile">
               <div class="profile_pic">
-                <img src="{{ url('images/fotoprofile/user.png') }}"  class="img-circle fotoadminsidebar" alt="Generic placeholder thumbnail">
+                <?php $foto = $foto_sidebar->foto_profile; ?>
+                <img src="{{ url('images/fotoprofile/'. $foto) }}"  class="img-circle fotoadminsidebar" alt="Generic placeholder thumbnail">
               </div>
               <div class="profile_info">
                 <span>Welcome,</span>
@@ -105,7 +106,7 @@
                     <div class="panel-body">
                         <ul class="nav navbar-nav">
                             <li><a href="{{ url('pengolahan/kehilangan') }}"><span class="glyphicon glyphicon-object-align-bottom"> Kehilangan</span></a></li>
-                            <li><a href="{{ url('pengolahan/kehilangan') }}"><span class="glyphicon glyphicon-object-align-top"> Penemuan</span></a></li>
+                            <li><a href="{{ url('pengolahan/penemuan') }}"><span class="glyphicon glyphicon-object-align-top"> Penemuan</span></a></li>
 
                             
                         </ul>

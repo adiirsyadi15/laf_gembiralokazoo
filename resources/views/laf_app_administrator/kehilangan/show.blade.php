@@ -11,7 +11,6 @@
     <div class="row">
       @foreach($kehilangans as $k)
       <h3>KEHILANGAN
-          <?php $id_proses = $k->id_proses ?>
           <a href="{{ route('pengolahan.kehilangan.cetak',  $id_proses) }}" data-toggle="tooltip" data-placement="left" title="cetak laporan" target="_blank" class="pull-right"><span class="glyphicon glyphicon-print" ></span></a>
       </h3>
 
@@ -115,7 +114,7 @@
       
     <div class="row">
     <div class="datapemilik">
-      <h4>Data Barang <a href="" class="pull-right">Tambah</a></h4>
+      <h4>Data Barang <a href="{{ route('pengolahan.kehilangan.tambah_barang', $id_proses) }}" class="pull-right">Tambah</a></h4>
       <hr>
 
     @foreach($barangs as $b)
@@ -132,17 +131,7 @@
             </ol>
 
             <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-            
-              @foreach($fotos as $number => $foto )
-                @foreach($foto as $data => $f )
-
-              <div class="item active">
-                <img src="{{ url('images/fotobarang/'.$f->nama) }}" >
-              </div>
-                @endforeach
-              @endforeach
-            </div>
+            <!--  -->
 
             <!-- Left and right controls -->
             <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
@@ -155,7 +144,7 @@
             </a>
             </div>
           </div>
-          <div class="col-md-8">
+          <div class="col-md-6">
             <form class="form-horizontal">
               <div class="form-group">
                 <label class="col-sm-2 control-label">nama</label>
@@ -174,11 +163,36 @@
               <div class="form-group">
                 <label class="col-sm-2 control-label">Ciri - ciri</label>
                 <div class="col-sm-10">
-                <p class="form-control-static">{{ $b->ciri_ciri }} tahun</p>
+                <p class="form-control-static">{{ $b->ciri_ciri }}</p>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-sm-2 control-label">Status kehilangan</label>
+                <div class="col-sm-10">
+                <p class="form-control-static">{{ $b->status_kehilangan }}</p>
                 </div>
               </div>
             </form>
           </div>
+          <div class="col-md-2">
+            <form class="form-horizontal">
+              <div class="form-group">
+                <div class="col-sm-12 control-label">
+                <a href="{{ route('pengolahan.kehilangan.edit_barang', [$id_proses, $b->id_barang]) }}">ubah</a>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-12 control-label">
+                <a href="#">Delete</a>
+                </div>
+              </div>
+
+
+            </form>
+          </div>
+
           
         </div>
       </div>

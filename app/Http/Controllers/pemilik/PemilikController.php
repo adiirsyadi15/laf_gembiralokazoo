@@ -82,7 +82,7 @@ class PemilikController extends Controller
         if(Input::hasFile('foto')){
             $date = new DateTime();
             $datetosting = $date->format('Y-m-d-H-i-s');
-            $destination_fotoprofile = base_path() . '/public/images/fotoprofile';
+            $destination_fotoprofile = public_path() . DIRECTORY_SEPARATOR . 'images/fotoprofile';
 
             // mendapatka nama file foto yang akan di delete
             $pemilik = Pemilik::where('username', $id)->firstOrFail();
