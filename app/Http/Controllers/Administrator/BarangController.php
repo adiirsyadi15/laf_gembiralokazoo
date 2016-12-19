@@ -24,6 +24,7 @@ use App\Penemuan;
 use App\Foto;
 
 use DB;
+use PDF;
 
 class BarangController extends Controller
 {
@@ -242,5 +243,21 @@ class BarangController extends Controller
         $gambarpindah = $photo->move($destination_foto, $nama_foto);
 
         return $nama_foto;
+    }
+
+    public function cetak_label($id_proses, $id_barang)
+    {
+        $barang = Barang::join('penemuans','penemuans.id_barang','=','barangs.id_barang')
+            ->join('proses','penemuans.id_proses','=','proses.id_proses')
+            ->join('kejadians','proses.id_kejadian','=','kejadians.id_kejadian')
+            ->where('barangs.id_barang', $id_barang)
+            ->first();
+
+        // dd($proses);
+
+        $pdf = PDF::loadView('laf_app_administrator.cetak.cetak_label_barang', compact('barang'));
+
+        $pdf->setPaper('a4', 'potrait');
+        return $pdf->stream('cetak_label_barang.pdf');
     }
 }

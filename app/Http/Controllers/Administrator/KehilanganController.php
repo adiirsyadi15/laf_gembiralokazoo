@@ -211,18 +211,55 @@ class KehilanganController extends Controller
         }
         // dd($umur);
 
-        $barangs = DB::table('barangs')
-            ->join('kehilangans', 'kehilangans.id_barang', '=', 'barangs.id_barang')
+        // $barangs = DB::table('barangs')
+        //     ->join('kehilangans', 'kehilangans.id_barang', '=', 'barangs.id_barang')
+        //     ->join('kategoris', 'barangs.id_kategori', '=', 'kategoris.id_kategori')
+        //     ->where('kehilangans.id_proses', '=', $id_proses)
+        //     ->groupBy('barangs.id_barang')
+        //     ->select('barangs.id_barang','barangs.nama as nama_barang', 'kategoris.nama as kategori','barangs.ciri_ciri', 'kehilangans.status_kehilangan')
+        //     ->get();
+
+        $barangs = Barang::with('foto')
+        	->join('kehilangans', 'kehilangans.id_barang', '=', 'barangs.id_barang')
             ->join('kategoris', 'barangs.id_kategori', '=', 'kategoris.id_kategori')
             ->where('kehilangans.id_proses', '=', $id_proses)
             ->groupBy('barangs.id_barang')
             ->select('barangs.id_barang','barangs.nama as nama_barang', 'kategoris.nama as kategori','barangs.ciri_ciri', 'kehilangans.status_kehilangan')
             ->get();
 
+            // dd($barangs);
+         // foreach ($barangs as $b) {
+         	
+         // 	foreach ($b->foto as $f) {
+         // 		dd($f->nama);
+         // 	}
+         // }
+
+
+  //       $barang_array = $barangs->toArray();
+		
+		// foreach ($barang_array as $i => $b ) {
+	 //        $fotos = DB::table('fotos')
+		//             ->where('fotos.id_barang', '=', $b['id_barang'])
+		//             ->get();   
+		// 	$barang_array[$i]['gambar'] = $fotos;   
+	 //    }
+
+	 //    $barangs = $barang_array;
+
+
+	     // foreach ($barangs as $b ) {
+      //       $fotos = Foto::where('fotos.id_barang', '=', $b->id_barang)
+      //       ->get();
+      //       $barangs->merger($fotos);
+      //   }
+
+      //   dd($barangs);
 
 
 
-        // $barangs->toArray();
+		// dd($barang_array);
+
 
         // dd($barangs);
 
@@ -232,13 +269,13 @@ class KehilanganController extends Controller
 
         // dd($barangs, $barang_array);
         // dd($barang_array);
-  // foreach ($arrays as $i => $b ) {
-            
-  //           $fotos = DB::table('fotos')
-  //           ->where('fotos.id_barang', '=', $b->id_barang)
-  //           ->get();
-  //           $arrays[$i]['gambar'] = $fotos;
-  //       }
+		  // foreach ($arrays as $i => $b ) {
+		            
+		  //           $fotos = DB::table('fotos')
+		  //           ->where('fotos.id_barang', '=', $b->id_barang)
+		  //           ->get();
+		  //           $arrays[$i]['gambar'] = $fotos;
+		  //       }
 
   //       dd($barangs);
         

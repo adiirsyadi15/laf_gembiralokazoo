@@ -8,10 +8,7 @@
 
 body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  /*font-family: 'Lobster', cursive;*/
-  background-color:;
   position: relative;
-  font-weight:400px;
 }
 /*Header*/
 
@@ -393,6 +390,10 @@ footer ul.quicklinks {
 .copyright i a:hover{
   text-decoration: none;
   color: #fff;
+}
+
+#share a{
+  margin: 5px 0 0 0;
 }
 
 /*setting mobile*/

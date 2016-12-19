@@ -41,7 +41,7 @@
                       {{ csrf_field() }}
                       <div class="form-group">
                       <label class="sr-only" for="exampleInputEmail2">username</label>
-                      <input type="text" class="form-control" id="exampleInputEmail2" placeholder="User Name" required name="username">
+                      <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Username" required name="username">
                       </div>
 
                       <div class="form-group {{ $errors->has('password') ? ' has-error' : '' }}">

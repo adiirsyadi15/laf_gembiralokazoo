@@ -11,7 +11,7 @@
 
   <div class="col-md-12">
     <div class="profile">
-    <h4>Tambah Identitas</h4>
+    <h4>Edit Identitas</h4>
      <hr>
         <div class="formsetting">
            <div class="col-md-6">

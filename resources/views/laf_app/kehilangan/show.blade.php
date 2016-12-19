@@ -29,7 +29,7 @@
                 <p>Telah hilang {{ $kehilangan->nama_kategori }} {{ $kehilangan->nama_barang }} di {{ $kehilangan->lokasi }} jam {{ $kehilangan->waktu }} pada hari {{$kehilangan->hari}} tanggal {{ $kehilangan->tanggal }}, bagi yang merasa menemukan dapat menghubungi </p>
 
                 <p>Hubungi via</p>
-                <p><a href="#" data-toggle="popover" data-content="{{ $kehilangan->no_hp }}" data-placement="bottom" class="btn btn-call">Nomor Hp</a> <a href="#" data-toggle="popover" data-content="{{ 'aku' }}" data-placement="right" class="btn btn-call">Email</a></p>
+                <p><a href="#" data-toggle="popover" data-content="{{ $kehilangan->no_hp }}" data-placement="bottom" class="btn btn-call">Nomor Hp</a> <a href="#" data-toggle="popover" data-content="{{ $kehilangan->email }}" data-placement="right" class="btn btn-call">Email</a></p>
                 
                 <p>Atau</p>
                 <p class="alamatglz"  ><a href="#glzkontak" data-toggle="collapse"><b>Gembira Loka Zoo</b></a> </p>
@@ -45,6 +45,9 @@
             </div>
 
             @endforeach
+            <div class="col-md-2">
+                @include('home.share')
+            </div>
         </div>
 
       </div>

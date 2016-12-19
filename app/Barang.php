@@ -14,6 +14,8 @@ class Barang extends Model
    public $incrementing = false;
    protected $primaryKey = 'id_barang'; // or null
 
-
-
+   // 1 barang mempunyai banyak foto
+    public function foto() {
+        return $this->hasMany('App\Foto', 'id_barang', 'id_barang');
+    }
 }

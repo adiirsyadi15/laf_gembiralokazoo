@@ -1,6 +1,6 @@
 <html>
 <head>
-	<title></title>
+	<title>Cetak Kehilangan</title>
 	<script src="{{ url('/assets/js/jquery.js') }}"></script>
 	
 	<style type="text/css">

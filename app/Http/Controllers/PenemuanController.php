@@ -52,7 +52,7 @@ class PenemuanController extends Controller
         //
     }
 
-    public function show($id_penemuan)
+    public function show(Request $request, $id_penemuan)
     {
         $penemuans = DB::table('barangs')
             ->join('penemuans', 'penemuans.id_barang', '=', 'barangs.id_barang')
@@ -66,8 +66,17 @@ class PenemuanController extends Controller
             ->groupBy('barangs.id_barang')
             ->select('barangs.id_barang', 'barangs.nama as nama_barang', 'proses.id_proses', 'kejadians.tanggal', 'kejadians.lokasi','kejadians.waktu','kejadians.hari','kejadians.tanggal', 'kejadians.keterangan', 'fotos.nama as nama_foto', 'pemiliks.nama as nama_pemilik', 'kategoris.nama as nama_kategori', 'penemuans.status_pengambilan', 'pemiliks.no_hp')
             ->get();
+
+        // share social media
+        // get url
+        $url = $request->Url();
+        foreach ($penemuans as $p) {
+            $nama = $p->nama_barang;
+        }
+        $share = new ShareController;
+        $share = $share->share($url, $nama);
        
-        return view('laf_app.penemuan.show', compact('penemuans'));
+        return view('laf_app.penemuan.show', compact('penemuans','share'));
     }
 
     public function edit($id)
@@ -82,10 +91,40 @@ class PenemuanController extends Controller
 
     public function destroy($id)
     {
-        //
+        
     }
 
-    public function filter(Request $request){
-        
+    public function filter(Request $request)
+    {
+        // dd($_POST);
+        $nama_barang = $request->nb;
+        $nama_pemilik = $request->np;
+        $kategori = $request->cat;
+        $tanggal = $request->tgl;
+        $status = $request->status;
+
+        $penemuans = DB::table('barangs')
+            ->join('penemuans', 'penemuans.id_barang', '=', 'barangs.id_barang')
+            ->join('fotos','fotos.id_barang','=','barangs.id_barang')
+            ->join('kategoris','barangs.id_kategori','=','kategoris.id_kategori')
+            ->join('proses', 'penemuans.id_proses', '=', 'proses.id_proses')
+            ->join('kejadians', 'proses.id_kejadian', '=', 'kejadians.id_kejadian')
+            ->leftjoin('pemiliks', 'proses.id_pemilik', '=', 'pemiliks.id_pemilik')
+            ->where('barangs.nama', 'like','%'.$nama_barang.'%')
+            ->where('kategoris.id_kategori', 'like','%'.$kategori.'%')
+            ->where('kejadians.tanggal', 'like','%'.$tanggal.'%')
+            ->where('penemuans.status_pengambilan', 'like','%'.$status.'%')
+            ->groupBy('barangs.id_barang')
+            ->select('barangs.id_barang', 'barangs.nama as nama_barang', 'proses.id_proses', 'kejadians.tanggal', 'kejadians.lokasi', 'kejadians.keterangan', 'fotos.nama as nama_foto', 'pemiliks.nama as nama_pemilik', 'kategoris.nama as nama_kategori', 'penemuans.status_pengambilan', 'penemuans.id_penemuan')
+            ->orderby('barangs.nama')
+            ->paginate(6);
+
+        // dd($penemuans);
+        // setting paginage supaya pake tidak hilang ketika ada parameter get di url
+        $penemuans->appends(Input::except('page'))->links();
+
+
+       
+        return view('laf_app.penemuan.index', compact('penemuans', 'q'));
     }
 }

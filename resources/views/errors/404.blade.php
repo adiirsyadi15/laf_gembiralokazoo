@@ -6,21 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>LaF | GEMBIRA LOKA ZOO</title>
     {!! Html::style('/assets/css/bootstrap.min.css') !!}
-    {!! Html::style('/assets/css/font-awesome.min.css') !!}
+    {!! Html::style('/assets/css/font-awesome.css') !!}
+    {!! Html::style('/assets/css/404.css') !!}
     
     <link rel="icon" type="image/png" href="images/logo.png">
-<style type="text/css">
-    img{
-        height: 100px;
-    }
-</style>
+
 </head>
 <body>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <img src="{{ url('images/logo.png') }}">
-            <p>sorry halaman yang anda cari tidak ada</p>
+            <div class="eror_404">
+                <h2>Maaf, halaman ini tidak tersedia</h2>
+                <h4>Konten yang anda cari mungkin telah rusak, atau halaman telah dihapus.</h4>
+                <br>
+                <img src="{{ url('images/logo.png') }}">
+                <br>
+                <br>
+                <a href="{{ url('/') }}"><p>HOME</p></a>
+            </div>
         </div>
     </div>
 </div>

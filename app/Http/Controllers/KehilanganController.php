@@ -8,6 +8,9 @@ use App\Http\Requests;
 
 use Illuminate\Support\Facades\Input;
 
+use App\Http\Controllers\ShareController;
+
+
 use DB;
 class KehilanganController extends Controller
 {
@@ -39,7 +42,7 @@ class KehilanganController extends Controller
 
     }
 
-    public function show($id_kehilangan)
+    public function show(Request $request, $id_kehilangan)
     {
 
         $kehilangans = DB::table('barangs')
@@ -49,12 +52,23 @@ class KehilanganController extends Controller
             ->join('proses', 'kehilangans.id_proses', '=', 'proses.id_proses')
             ->join('kejadians', 'proses.id_kejadian', '=', 'kejadians.id_kejadian')
             ->join('pemiliks', 'proses.id_pemilik', '=', 'pemiliks.id_pemilik')
+            ->join('users', 'users.username', '=', 'pemiliks.username')
             ->where('kehilangans.id_kehilangan', 'like','%'.$id_kehilangan.'%')
             ->groupBy('barangs.id_barang')
-            ->select('barangs.id_barang', 'barangs.nama as nama_barang', 'proses.id_proses', 'kejadians.tanggal', 'kejadians.lokasi','kejadians.waktu','kejadians.hari','kejadians.tanggal', 'kejadians.keterangan', 'fotos.nama as nama_foto', 'pemiliks.nama as nama_pemilik', 'kategoris.nama as nama_kategori', 'kehilangans.status_kehilangan', 'pemiliks.no_hp')
+            ->select('barangs.id_barang', 'barangs.nama as nama_barang', 'proses.id_proses', 'kejadians.tanggal', 'kejadians.lokasi','kejadians.waktu','kejadians.hari','kejadians.tanggal', 'kejadians.keterangan', 'fotos.nama as nama_foto', 'pemiliks.nama as nama_pemilik', 'kategoris.nama as nama_kategori', 'kehilangans.status_kehilangan', 'pemiliks.no_hp', 'users.email')
             ->get();
+
+
+        // share social media
+        // get url
+        $url = $request->Url();
+        foreach ($kehilangans as $k) {
+            $nama = $k->nama_barang;
+        }
+        $share = new ShareController;
+        $share = $share->share($url, $nama);
        
-        return view('laf_app.kehilangan.show', compact('kehilangans'));
+        return view('laf_app.kehilangan.show', compact('kehilangans', 'share'));
 
     }
 
@@ -77,7 +91,7 @@ class KehilanganController extends Controller
             ->join('pemiliks', 'proses.id_pemilik', '=', 'pemiliks.id_pemilik')
             ->where('barangs.nama', 'like','%'.$nama_barang.'%')
             ->where('pemiliks.nama', 'like','%'.$nama_pemilik.'%')
-            ->where('kategoris.nama', 'like','%'.$kategori.'%')
+            ->where('kategoris.id_kategori', 'like','%'.$kategori.'%')
             ->where('kejadians.tanggal', 'like','%'.$tanggal.'%')
             ->where('kehilangans.status_kehilangan', 'like','%'.$status.'%')
             ->groupBy('barangs.id_barang')

@@ -1,0 +1,11 @@
+img{
+        height: 200px;
+    }
+.eror_404{
+	border: 2px solid #26b2ad;
+	border-radius: 20px;
+	padding: 50px;
+	text-align: center;
+	margin: 5% auto 0;
+	max-width: 800px;
+}

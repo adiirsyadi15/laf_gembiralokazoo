@@ -41,6 +41,9 @@
                 </div>
             </div>
             @endforeach
+            <div class="col-md-2">
+                @include('home.share')
+            </div>
         </div>
       </div>
 	</div>

@@ -80,6 +80,18 @@
     height: 50px;
 }
 
+/* untuk tombol foto pada slider barang*/
+#slider_foto a{
+    margin-right: 40%;
+    margin-top: 5px;
+}
+#slider_foto img {
+    min-height: 200px;
+    height: 100px;
+    display: block;
+    margin: 0 auto;
+}
+
 
 /*untuk step pada tambah kehilangan*/
 #tambah_kehilangan fieldset:not(:first-of-type) {

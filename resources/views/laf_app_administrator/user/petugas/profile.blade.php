@@ -37,10 +37,13 @@
           </div>
           
           <!-- alamat -->
-          <label class="col-sm-2 control-label">alamat</label>
-          <div class="col-sm-10">
-          <p class="form-control-static">{{ $profiles->alamat }}</p>
+          <div class="row">
+            <label class="col-sm-2 control-label">alamat</label>
+            <div class="col-sm-10">
+            <p class="form-control-static">{{ $profiles->alamat }}</p>
+            </div>
           </div>
+          
 
           <!-- jenis kelamin -->
           <div class="row">

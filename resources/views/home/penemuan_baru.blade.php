@@ -14,7 +14,7 @@
                 @foreach($penemuan_baru as $p)
                 <div class="item <?php if($i==1){ echo "active"; } ?>  slidergambar">
                   <div class="col-md-3 col-sm-6 col-xs-12">
-                        <a href="{{ route('kehilangan.show', $p->id_penemuan) }}">
+                        <a href="{{ route('penemuan.show', $p->id_penemuan) }}">
                             <img src="{{ url('images/fotobarang/'.$p->nama_foto) }}" alt="Image" class="img-responsive">
                         </a>
                       

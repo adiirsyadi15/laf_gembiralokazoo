@@ -167,6 +167,9 @@ return [
 
         // view composer
         App\Providers\ComposerServiceProvider::class,
+
+        // share sosmed
+        Chencha\Share\ShareServiceProvider::class,
     ],
 
     /*
@@ -221,6 +224,9 @@ return [
 
         // dompdf
         'PDF' => Barryvdh\DomPDF\Facade::class,
+
+        // share sosmed
+        'Share' => Chencha\Share\ShareFacade::class,
     ],
 
 ];

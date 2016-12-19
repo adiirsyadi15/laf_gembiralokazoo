@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>LaF | GEMBIRA LOKA ZOO</title>
     {!! Html::style('/assets/css/bootstrap.min.css') !!}
-
+    {!! Html::style('/assets/css/bootstrap-social.css') !!}
     {!! Html::style('/assets/css/laf_administrator/nav_sidebar.css') !!}
     {!! Html::style('/assets/css/laf_administrator/kontenpanel.css') !!}
     {!! Html::style('/assets/css/laf_administrator/style.css') !!}
-    {!! Html::style('/assets/css/font-awesome.min.css') !!}
+    {!! Html::style('/assets/css/font-awesome.css') !!}
     
     <link rel="icon" type="image/png" href="images/logo.png">
    

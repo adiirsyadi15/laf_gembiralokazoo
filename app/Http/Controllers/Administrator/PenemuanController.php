@@ -18,6 +18,7 @@ use App\Kehilangan;
 use App\Foto;
 use Illuminate\Support\Facades\Input;
 use Auth;
+use PDF;
 
 class PenemuanController extends Controller
 {
@@ -172,8 +173,8 @@ class PenemuanController extends Controller
         $kehilangan->save();
 
 
-        \Flash::success('data kehilangan berhasil ditambah');
-        return redirect()->route('pengolahan.kehilangan.index');
+        \Flash::success('data penemuan berhasil ditambah');
+        return redirect()->route('pengolahan.penemuan.index');
 
     }
 
@@ -203,7 +204,7 @@ class PenemuanController extends Controller
         }
         // dd($penemuans, $pemiliks);
 
-        $barangs = DB::table('barangs')
+        $barangs = Barang::with('foto')
             ->join('penemuans', 'penemuans.id_barang', '=', 'barangs.id_barang')
             ->join('kategoris', 'barangs.id_kategori', '=', 'kategoris.id_kategori')
             ->where('penemuans.id_proses', '=', $id_proses)
@@ -218,47 +219,52 @@ class PenemuanController extends Controller
     // cetak laporan kehilangan
     public function cetak($id_proses)
     {
-
-        $kehilangans = DB::table('proses')
-            ->join('kehilangans', 'kehilangans.id_proses', '=', 'proses.id_proses')
+        $id_proses = $id_proses;
+        $penemuans = DB::table('proses')
+            ->join('penemuans', 'penemuans.id_proses', '=', 'proses.id_proses')
             ->join('kejadians', 'proses.id_kejadian', '=', 'kejadians.id_kejadian')
             ->join('petugas', 'proses.id_petugas', '=', 'petugas.id_petugas')
-            ->join('pemiliks', 'proses.id_pemilik', '=', 'pemiliks.id_pemilik')
             ->where('proses.id_proses', '=', $id_proses)
             ->groupBy('proses.id_proses')
-            ->select('*', 'petugas.nama as nama_petugas')
-            ->get();
-        // dd($kehilangans);
-        $barangs = DB::table('barangs')
-            ->join('kehilangans', 'kehilangans.id_barang', '=', 'barangs.id_barang')
-            ->join('kategoris', 'barangs.id_kategori', '=', 'kategoris.id_kategori')
-            ->where('kehilangans.id_proses', '=', $id_proses)
-            ->groupBy('barangs.id_barang')
-            ->select('barangs.id_barang','barangs.nama as nama_barang', 'kategoris.nama as kategori','barangs.ciri_ciri', 'kehilangans.status_kehilangan')
             ->get();
 
-        foreach ($kehilangans as $k) {
-            $pemilik_tanggallahir = $k->tanggal_lahir;
+        foreach ($penemuans as $p) {
+            $id_pemilik = $p->id_pemilik;
+            if (isset($id_pemilik)) {
+                $pemilik = Pemilik::where('id_pemilik', $id_pemilik)->first();
+                $umur = $this->hitung_umur($pemilik->tanggal_lahir);
+                // dd($umur);
+            }else{
+                unset($pemilik);
+                // \Flash::error('cetak penemuan gagak karena data pemilik masih kosong');
+                // return redirect()->route('pengolahan.penemuan.show', $id_proses);
+            }
+
+            $id_penemuan = $p->id_penemuan;
         }
-        // umur hitung
-        $today = new DateTime();
-        $tanggal_lahir = $pemilik_tanggallahir;
-        $tanggal_lahir = new DateTime($tanggal_lahir);
-        $umur = $today->diff($tanggal_lahir);
-        $umur = $umur->y;
+        // dd($penemuans, $pemiliks);
+        // dd($penemuans);
+        $barangs = DB::table('barangs')
+            ->join('penemuans', 'penemuans.id_barang', '=', 'barangs.id_barang')
+            ->join('kategoris', 'barangs.id_kategori', '=', 'kategoris.id_kategori')
+            ->where('penemuans.id_proses', '=', $id_proses)
+            ->groupBy('barangs.id_barang')
+            ->select('barangs.id_barang','barangs.nama as nama_barang', 'kategoris.nama as kategori','barangs.ciri_ciri', 'penemuans.status_pengambilan')
+            ->get();
 
+
+        $today = new DateTime();
         $tanggal_surat = $today->format('d-m-Y');
-        $pukul_surat = $today->format('H:i');
 
         // dd($pukul_surat);
 
         // dd($barangs);
-        $pdf = PDF::loadView('laf_app_administrator.cetak.cetak_kehilangan', compact('kehilangans','barangs', 'umur', 'tanggal_surat', 'pukul_surat'));
+        $pdf = PDF::loadView('laf_app_administrator.cetak.cetak_penemuan', compact('penemuans','barangs', 'umur', 'tanggal_surat', 'pemilik'));
 
         $pdf->setPaper('a4', 'potrait');
-        return $pdf->stream('cetak_laporan_kehilangan.pdf');
+        return $pdf->stream('cetak_surat_penemuan.pdf');
         
-        // return view('laf_app.pemilik.kehilangan_cetak', compact('kehilangans','barangs', 'pemilik', 'umur', 'tanggal_surat', 'pukul_surat'));
+        // return view('laf_app_administrator.cetak.cetak_penemuan', compact('penemuans','barangs', 'umur', 'tanggal_surat', 'pukul_surat'));
     }
 
 

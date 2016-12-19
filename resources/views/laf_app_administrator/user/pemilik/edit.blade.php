@@ -41,6 +41,7 @@
           <div class="form-group">
               <label for="jk">Jenis Kelamin</label>
               <div class="radio">
+              @if($pemiliks->jenis_kelamin == 'L')
                   <label>
                     <input type="radio" name="jk" id="L" value="L" checked>
                     Laki-laki
@@ -49,7 +50,17 @@
                     <input type="radio" name="jk" id="P" value="P">
                    Perempuan
                   </label>
-                </div>
+              @else
+                 <label>
+                    <input type="radio" name="jk" id="L" value="L">
+                    Laki-laki
+                  </label>
+                  <label>
+                    <input type="radio" name="jk" id="P" value="P" checked>
+                   Perempuan
+                  </label>
+              @endif
+              </div>
           </div>
           
       </div>

@@ -8,7 +8,7 @@
     {!! Html::style('/assets/css/bootstrap.min.css') !!}
 
     {!! Html::style('/assets/css/auth/auth.css') !!}
-    {!! Html::style('/assets/css/font-awesome.min.css') !!}
+    {!! Html::style('/assets/css/font-awesome.css') !!}
     
     <link rel="icon" type="image/png" href="images/logo.png">
    

@@ -69,6 +69,11 @@ Route::group(['middleware' => 'web'], function () {
 		// cetak laporan kehilangan
 		Route::get('pengolahan/kehilangan/{id_proses}/cetak', ['as' => 'pengolahan.kehilangan.cetak', 'uses' => 'Administrator\KehilanganController@cetak']);
 
+		// cetak berkas penemuan
+		Route::get('pengolahan/penemuan/{id_proses}/cetak', ['as' => 'pengolahan.penemuan.cetak', 'uses' => 'Administrator\PenemuanController@cetak']);
+
+		// cetak label barang
+		Route::get('pengolahan/penemuan/{id_proses}/{id_barang}/cetaklabel', ['as' => 'pengolahan.penemuan.cetak_label', 'uses' => 'Administrator\BarangController@cetak_label']);
 
 		// pengelolaan penemuan
 		Route::resource('pengolahan/penemuan', 'Administrator\PenemuanController');

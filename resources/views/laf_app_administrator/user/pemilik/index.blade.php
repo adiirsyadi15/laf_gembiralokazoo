@@ -47,7 +47,7 @@
                   <td> <p> {{ $p->no_hp }} </p></td>
                   <td> <p> 
                     <a href="{{ route('userpemilik.edit', $p->username)}}"><span class="glyphicon glyphicon-edit"></span></a> 
-                    |<a href="{{ route('userpemilik.show', $p->username)}}"><span class="glyphicon glyphicon-check"></span></a> 
+                    
                     |
                     <!-- Button trigger modal -->
                     <button type="button" data-toggle="modal" data-target="#detele{{ $p->username }}">
@@ -62,7 +62,7 @@
                                 <h4 class="modal-title" id="myModalLabel">Delete Data pemilik</h4>
                               </div>
                               <div class="modal-body">
-                                <p>Are you sure about this <b>{{ $p->nama }}</b>?</p>
+                                <p>Apakah kamu yakin akan menghapus data <b>{{ $p->nama }}</b>?</p>
                               </div>
                               <div class="modal-footer">
                               {!! Form::model($pemiliks, ['route' => ['userpemilik.destroy', $p->username], 'method' => 'delete', 'class' => 'form-inline','id' => 'FormDeleteTime']  ) !!}

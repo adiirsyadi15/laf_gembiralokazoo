@@ -30,6 +30,10 @@ class ComposerServiceProvider extends ServiceProvider
 
         // view composer kehilangan baru
         View::composer('home.penemuan_baru', 'App\Http\ViewComposer\PenemuanBaruComposer');
+
+         // view composer filter kehilangan dan penemuan
+        View::composer('laf_app.kehilangan._filter', 'App\Http\ViewComposer\FilterComposer');
+        View::composer('laf_app.penemuan._filter', 'App\Http\ViewComposer\FilterComposer');
     }
 
     /**

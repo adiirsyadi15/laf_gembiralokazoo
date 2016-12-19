@@ -25,8 +25,9 @@
 			<div class="col-xs-9">
 				<select name="cat" class="form-control">
 					<option value="">--- pilih kategori ---</option>
-					<option value="ss">aaa</option>
-					<option value="aksesoris">aksesoris</option>
+					@foreach($kategoris as $c)
+					<option value="{{ $c->id_kategori }}">{{ $c->nama }}</option>
+					@endforeach
 				</select>
 			</div>
 		</div>

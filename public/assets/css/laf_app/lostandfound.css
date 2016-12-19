@@ -33,12 +33,15 @@
   float: right;
 }
 
+.formsetting h5{
+  font-weight: bold;
+}
 .formsetting hr{
   margin-top: -5px;
 }
-
 .formsetting .form-horizontal .form-group label{
   text-align: left;
+  font-weight: normal;
 }
 
 .formsetting .form-horizontal .form-group{
@@ -101,6 +104,9 @@
     min-height:150px; 
     height:50px; 
   }
+  .formsetting .form-horizontal .form-group label{
+  font-weight: bold;
+}
 
 }
 

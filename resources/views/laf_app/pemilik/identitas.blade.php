@@ -15,7 +15,7 @@
     @if($identitas->isEmpty())
      <a href="{{ route('pemilik.identitas.tambah', $pemiliks->username) }}" data-toggle="tooltip" data-placement="left" title="Tambah Identitas"><span class="glyphicon glyphicon-plus"></span></a>
     @else
-      <a href="#" data-toggle="tooltip" data-placement="left" title="Edit Identitas"><span class="glyphicon glyphicon-edit"></span></a>
+      <a href="{{  route('pemilik.identitas.edit',  $pemiliks->username) }}" data-toggle="tooltip" data-placement="left" title="Edit Identitas"><span class="glyphicon glyphicon-edit"></span></a>
     @endif
    
     </h4>

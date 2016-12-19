@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 10 Des 2016 pada 13.12
+-- Generation Time: 19 Des 2016 pada 17.09
 -- Versi Server: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -168,16 +168,18 @@ CREATE TABLE IF NOT EXISTS `barangs` (
 --
 
 INSERT INTO `barangs` (`id_barang`, `id_kategori`, `nama`, `ciri_ciri`, `created_at`, `updated_at`) VALUES
-('B0001', 1, 'Xiomi redmi 3', 'warna hitam ada temperate glass', '2016-11-22 05:30:15', NULL),
+('B0001', 1, 'Xiomi redmi 3', 'warna hitam ada temperate glassa', '2016-11-22 05:30:15', '2016-12-14 03:41:06'),
 ('B0002', 4, 'Planet Ocean', 'Planet ocean berisi uang 50rb.warna hitam', NULL, NULL),
-('B0003', 1, 'iphone 5 ', 'warna putih', '2016-11-15 01:21:23', NULL),
-('B0004', 6, 'jam tangan swis arm', 'kam tangan warna hitam ada palet putih', '2016-11-30 18:29:27', '2016-11-30 18:29:27'),
-('B0005', 6, 'Kalung emas', 'kalung 5 gram', '2016-11-30 18:30:57', '2016-11-30 18:30:57'),
-('B0006', 1, 'xperia z1', 'ada stiker di belakang hp', '2016-12-05 19:23:10', '2016-12-05 19:23:10'),
+('B0003', 1, 'iphone 5', 'warna putihp', '2016-11-15 01:21:23', '2016-12-18 21:27:02'),
+('B0004', 6, 'jam tangan swis arm', 'kam tangan warna hitam ada palet putih', '2016-11-30 18:29:27', '2016-12-14 03:41:46'),
+('B0005', 6, 'Kalung emas', 'kalung 5 grams', '2016-11-30 18:30:57', '2016-12-14 03:41:41'),
+('B0006', 1, 'xperia z1', 'ada stiker di belakang hp', '2016-12-05 19:23:10', '2016-12-14 03:45:14'),
 ('B0007', 7, 'sepatu nike', 'sepatu nike warna hitam', '2016-12-05 19:48:24', '2016-12-05 19:48:24'),
 ('B0008', 6, 'sandal eriger', 'sandal gunung berserampat', '2016-12-05 19:52:19', '2016-12-05 19:52:19'),
 ('B0009', 6, 'casio ae 200', 'warna silver hitam', '2016-12-05 20:06:02', '2016-12-05 20:06:02'),
-('B0010', 3, 'tas ransel ', 'tas ransel warna ungu', '2016-12-05 23:36:54', '2016-12-05 23:36:54');
+('B0010', 3, 'tas ransel ', 'tas ransel warna ungu', '2016-12-05 23:36:54', '2016-12-05 23:36:54'),
+('B0011', 4, 'Planet Ocean', 'Planet ocean berisi uang 50rb.warna hitam', '2016-12-13 19:45:38', '2016-12-13 19:45:38'),
+('B0012', 4, 'Planet Ocean', 'Planet ocean berisi uang 50rb.warna hitam', '2016-12-13 19:45:43', '2016-12-13 19:45:43');
 
 --
 -- Trigger `barangs`
@@ -212,7 +214,7 @@ CREATE TABLE IF NOT EXISTS `fotos` (
   `nama` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data untuk tabel `fotos`
@@ -221,14 +223,17 @@ CREATE TABLE IF NOT EXISTS `fotos` (
 INSERT INTO `fotos` (`id_foto`, `id_barang`, `nama`, `created_at`, `updated_at`) VALUES
 (1, 'B0001', 'barang.png', NULL, NULL),
 (2, 'B0002', 'dompet_2016-12-06-02-23-10_3.jpg', NULL, NULL),
-(3, 'B0003', 'hp.jpg\r\n', NULL, NULL),
+(3, 'B0003', 'hp.jpg', NULL, NULL),
 (4, 'B0004', 'jam_2016-12-06-02-23-10_3.jpg', '2016-11-30 18:29:27', '2016-11-30 18:29:27'),
 (6, 'B0005', 'barang.png', NULL, NULL),
 (8, 'B0006', 'xperia_2016-12-06-02-23-10_3.jpg', '2016-12-05 19:23:10', '2016-12-05 19:23:10'),
 (9, 'B0007', '6_2016-12-06-02-48-24_nike.jpg', '2016-12-05 19:48:24', '2016-12-05 19:48:24'),
 (10, 'B0008', '6_2016-12-06-02-52-19_sandal.jpg', '2016-12-05 19:52:19', '2016-12-05 19:52:19'),
 (11, 'B0009', '6_2016-12-06-03-06-02_casio.jpg', '2016-12-05 20:06:02', '2016-12-05 20:06:02'),
-(12, 'B0010', '3_2016-12-06-06-36-54_tas.jpg', '2016-12-05 23:36:54', '2016-12-05 23:36:54');
+(12, 'B0010', '3_2016-12-06-06-36-54_tas.jpg', '2016-12-05 23:36:54', '2016-12-05 23:36:54'),
+(13, 'B0011', 'barang.png', '2016-12-13 19:45:39', '2016-12-13 19:45:39'),
+(14, 'B0012', 'barang.png', '2016-12-13 19:45:43', '2016-12-13 19:45:43'),
+(15, 'B0002', 'barang.png', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -258,8 +263,8 @@ INSERT INTO `identitas` (`id_identitas`, `id_pemilik`, `jenis_identitas`, `nomor
 (4, 'O0002', 'STNK', '1806772', 'sim_1234.jpg', NULL, '2016-11-14 17:00:00', NULL),
 (6, 'O0007', 'ktp', '123123', 'ktp_1234.jpg', NULL, '2016-11-23 21:29:39', '2016-11-24 07:57:43'),
 (10, 'O0007', 'stnk', '87851121654964', 'stnk_2016-11-24-15-00-01_O0007_stnkkk.jpg', NULL, '2016-11-24 07:59:25', '2016-11-24 08:00:01'),
-(13, 'O0005', 'ktp', '1123745345', 'ktp_2016-11-28_O0005_KKTP.jpg', NULL, '2016-11-28 01:22:40', '2016-11-28 01:22:40'),
-(14, 'O0005', 'sim', '12311', 'sim_2016-11-28_O0005_SSIM.jpg', NULL, '2016-11-28 01:22:40', '2016-11-28 01:22:40'),
+(13, 'O0005', 'ktp', '112374534512', 'ktp_2016-11-28_O0005_KKTP.jpg', NULL, '2016-11-28 01:22:40', '2016-12-18 21:13:45'),
+(14, 'O0005', 'sim', '123112121', 'sim_2016-11-28_O0005_SSIM.jpg', NULL, '2016-11-28 01:22:40', '2016-12-18 21:13:45'),
 (17, 'O0009', 'ktp', '1123745345', 'ktp_2016-12-06_O0009_KKTP.jpg', NULL, '2016-12-05 19:21:10', '2016-12-05 19:21:10'),
 (18, 'O0009', 'sim', '874512154', 'sim_2016-12-06_O0009_SSIM.jpg', NULL, '2016-12-05 19:21:10', '2016-12-05 19:21:10'),
 (19, 'O0010', 'ktp', '87455443221', 'ktp_2016-12-06_O0010_ktp1.jpeg', NULL, '2016-12-05 19:45:11', '2016-12-05 19:45:11'),
@@ -367,10 +372,10 @@ CREATE TABLE IF NOT EXISTS `kejadians` (
 
 INSERT INTO `kejadians` (`id_kejadian`, `hari`, `tanggal`, `waktu`, `lokasi`, `keterangan`, `created_at`, `updated_at`) VALUES
 (1, 'sabtu', '2016-11-28', '10.30', 'pintu masuk gembira loka', 'hilang saat antri mau masuk kawasan gembira loka ', '2016-11-14 23:18:23', '2016-12-05 18:20:46'),
-(2, 'kamis', '2016-11-18', '10.23', 'tempat pemesanan tiket', 'ditemukan oleh bapak-bapak rambut panjang saat jalan', '2016-11-14 17:00:00', NULL),
+(2, 'senin', '2016-11-18', '10.23', 'tempat pemesanan tiket', 'ditemukan oleh bapak-bapak rambut panjang saat jalan', '2016-11-14 17:00:00', '2016-12-10 18:52:58'),
 (3, 'minggu', '2016-11-20', '08.00', 'dekat kandang jerapah', 'hilang saat jalan', '2016-11-19 17:20:00', NULL),
-(4, 'selasa', '2016-11-24', '13.32', 'kandang menjangan', 'tidak sengaja saat jalan', NULL, NULL),
-(7, 'kamis', '2016-12-06', '15:06', 'Dekat kandang jerapah', 'hilang saat perjalanan ', '2016-12-05 19:23:10', '2016-12-05 19:23:10'),
+(4, 'selasa', '2016-11-24', '13.32', 'kandang menjangan', 'tidak sengaja saat jalan', NULL, '2016-12-12 18:24:24'),
+(7, 'kamis', '2016-12-06', '15:06', 'Dekat kandang jerapah', 'hilang saat perjalanan ', '2016-12-05 19:23:10', '2016-12-12 18:24:07'),
 (8, 'sabtu', '2016-12-03', '14:00', 'mushola sebelah timur ', 'hilang saat ditinggal solat', '2016-12-05 19:48:24', '2016-12-05 19:48:24'),
 (13, 'sabtu', '2016-12-03', '09:30', 'Dekat Mushola timur', 'hilang saat di tinggal beribadah', '2016-12-05 23:36:54', '2016-12-05 23:36:54');
 
@@ -455,16 +460,16 @@ CREATE TABLE IF NOT EXISTS `pemiliks` (
 --
 
 INSERT INTO `pemiliks` (`id_pemilik`, `username`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `pekerjaan`, `agama`, `no_hp`, `pin_bbm`, `line`, `whatsapp`, `foto_profile`, `status_verifikasi`, `created_at`, `updated_at`) VALUES
-('O0001', 'pemilik', 'Diah Nur Arini', 'L', 'Magelang', '1996-09-15', 'Brebes timur jogjakarta', 'Mahasiswa', 'islam', '085603215452', 'D284E298', 'nandatok112', '1', 'user.png', '1', '2016-11-15 01:22:00', '2016-12-05 18:49:25'),
+('O0001', 'pemilik', 'Diah Nur Arini', 'P', 'Magelang', '1996-09-15', 'Brebes timur jogjakarta', 'Mahasiswa', 'islam', '085603215452', 'D284E298', 'nandatok112', '1', 'user.png', '1', '2016-11-15 01:22:00', '2016-12-05 18:49:25'),
 ('O0002', 'wedhana', 'wedhana puthera', 'L', 'cilacap', '1995-12-11', 'Adipala Cilacap', 'Guru', 'islam', '08566441234', 'aac321ad', '', NULL, 'user.png', '1', NULL, '2016-12-01 04:17:35'),
 ('O0003', 'Nandahonesty', 'nanda honesty p', 'L', 'brebes', '1996-09-15', 'condong catur depok', 'Mahasiswa', 'islam', '085696333214', 'aabbc21a', '', '1', 'user.png', '0', NULL, '2016-11-25 03:29:07'),
-('O0004', 'roni', 'roni', NULL, NULL, NULL, NULL, 'PNS', NULL, NULL, NULL, NULL, NULL, 'user.png', '0', '2016-11-17 08:40:09', '2016-11-17 08:40:09'),
-('O0005', 'coba', 'coba', 'L', 'Magelang', '1995-07-15', 'Derepan Rt01. Rw05 menoreh Salaman, Magelang', 'Polisi', 'islam', '085704846636', 'BBC321', 'adi213', NULL, 'user.png', '1', '2016-11-17 09:26:10', '2016-11-29 02:34:45'),
-('O0006', 'ulya', 'ulya', 'L', 'Magelang', '2016-11-24', 'Derepan, Menoreh, salaman', 'Tentara', 'islam', '085738821212', '', '', '1', 'pemilik_2016-11-24-16-26-35_ulya_1.jpg', '0', '2016-11-18 18:13:01', '2016-11-25 03:32:36'),
+('O0004', 'roni', 'roni', 'L', 'Jepara', '2016-12-18', 'Kudus, Jawa Tengah', 'PNS', 'islam', '085749685654', '', '', NULL, 'user.png', '0', '2016-11-17 08:40:09', '2016-12-18 08:59:15'),
+('O0005', 'coba', 'coba', 'L', 'Magelang', '1995-07-15', 'Derepan Rt01. Rw05 menoreh Salaman, Magelang', 'Polisi', 'islam', '085704846636', 'BBC321', 'adi213', NULL, 'user.png', '0', '2016-11-17 09:26:10', '2016-12-18 21:09:08'),
+('O0006', 'ulya', 'ulya', 'P', 'Magelang', '2016-11-24', 'Derepan, Menoreh, salaman', 'Tentara', 'islam', '085738821212', '', '', '1', 'pemilik_2016-11-24-16-26-35_ulya_1.jpg', '0', '2016-11-18 18:13:01', '2016-11-25 03:32:36'),
 ('O0007', 'marcel', 'marcel', 'L', 'Magelang', '1995-11-24', 'Magelang deket RST', 'Dokter', 'islam', '085777498756', 'BBDA12', 'marcelgoki', NULL, 'user.png', '1', '2016-11-23 19:37:34', '2016-11-24 10:56:08'),
 ('O0008', 'bani', 'Ahmad Sya''bani', 'L', 'Magelang', '1995-12-05', 'ngluwar Muntilan', 'Mahasiswa', 'islam', '085738821212', '', '', '1', 'user.png', '0', '2016-11-28 17:54:10', '2016-11-28 17:57:02'),
-('O0009', 'kholil', 'kholil AA', 'L', 'Kudus', '1995-12-06', 'Kudus, Jawa tengah', 'Mahasiswa', 'islam', '085743650661', 'aadd321', 'kholil21', '1', 'pemilik_2016-12-06-02-31-05_Screenshot (10).png', '0', '2016-12-05 19:00:14', '2016-12-05 19:31:05'),
-('O0010', 'putratok', 'Putra Wahyu', 'L', 'kulon progo', '1998-12-06', 'samigaluh Kulon Progo', 'mahasiswa', 'islam', '085412411547', '', '', '1', 'pemilik_2016-12-06-02-43-10_hutan-pinus-imogiri-1.jpg', '1', '2016-12-05 19:36:25', '2016-12-05 19:45:52');
+('O0009', 'kholil', 'kholil AA', 'L', 'Kudus', '1995-12-06', 'Kudus, Jawa tengah', 'Mahasiswa', 'islam', '085743650661', 'aadd321', 'kholil21', '1', 'pemilik_2016-12-06-02-31-05_Screenshot (10).png', '1', '2016-12-05 19:00:14', '2016-12-12 18:30:18'),
+('O0010', 'putratok', 'Putra Wahyu', 'L', 'kulon progo', '1998-12-06', 'samigaluh Kulon Progo', 'mahasiswa', 'islam', '085412411547', '', '', '1', 'pemilik_2016-12-10-11-19-58_pt.jpg', '1', '2016-12-05 19:36:25', '2016-12-10 04:19:58');
 
 --
 -- Trigger `pemiliks`
@@ -561,8 +566,9 @@ CREATE TABLE IF NOT EXISTS `petugas` (
 
 INSERT INTO `petugas` (`id_petugas`, `username`, `nama`, `jenis_kelamin`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `agama`, `no_hp`, `foto_profile`, `created_at`, `updated_at`) VALUES
 ('P01', 'ulya1994', 'ulya izzati rahmah', 'L', 'Magelang', '2016-11-15', 'Manukan Codong catur deppok sleman yogyakarta', 'islam', '085743650661', 'user.png', '2016-11-07 09:25:28', NULL),
-('P02', 'aku', 'aku', 'L', 'Sleman', '2016-11-19', 'Derepan Menoreh salaman', 'hindu', '085465714144', 'petugas_2016-11-19-08-58-43_2.jpg', '2016-11-19 01:19:36', '2016-11-19 01:58:43'),
-('P03', 'petugas', 'Mukhlis Adi Irsyadi', 'L', 'Magelang', '1995-07-15', 'Derepan Menoreh Salaman Magelang', 'islam', '085601846636', 'user.png', NULL, NULL);
+('P02', 'aku', 'aku', 'L', 'Sleman', '2016-11-19', 'Derepan Menoreh salaman', 'hindu', '085465714144', 'petugas_2016-12-10-10-47-24_23.PNG', '2016-11-19 01:19:36', '2016-12-10 03:47:24'),
+('P03', 'petugas', 'Mukhlis Adi Irsyadi', 'L', 'Magelang', '1995-07-15', 'Derepan Menoreh Salaman Magelang', 'islam', '085601846636', 'user.png', NULL, NULL),
+('P04', 'arifin', 'Arifin Surya R', 'L', 'Kulon Progo', '1990-12-31', 'wadas lintang Rt08 Rw2, wates, wates kulon progo, yogyakarta', 'hindu', '085749632584', 'petugas_2016-12-10-10-50-01_qqqq.PNG', '2016-12-10 03:50:01', '2016-12-10 03:50:01');
 
 --
 -- Trigger `petugas`
@@ -609,7 +615,7 @@ INSERT INTO `proses` (`id_proses`, `id_petugas`, `id_pemilik`, `id_kejadian`, `c
 ('LAF0002', 'P01', 'O0001', 2, NULL, NULL),
 ('LAF0003', 'P01', 'O0002', 3, '2016-11-15 22:18:20', NULL),
 ('LAF0004', 'P01', NULL, 4, NULL, NULL),
-('LAF0005', 'P03', 'O0009', 7, '2016-12-05 19:23:10', '2016-12-05 19:23:10'),
+('LAF0005', 'P01', 'O0009', 7, '2016-12-05 19:23:10', '2016-12-05 19:23:10'),
 ('LAF0006', 'P02', 'O0010', 8, '2016-12-05 19:48:24', '2016-12-05 19:48:24'),
 ('LAF0007', 'P03', 'O0010', 13, '2016-12-05 23:36:54', '2016-12-05 23:36:54');
 
@@ -650,18 +656,18 @@ CREATE TABLE IF NOT EXISTS `users` (
   `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `active`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', 'admin@gmail.com', '$2y$10$o2fqGzqYmNqHbMIl8DjFUOYCMupWsxf1I9cEa5fg.Tku7Uj62SRJe', 'admin', 1, '83zWc8cfGIX91DAR0ec9OaGf18mwFU4F75S8yCQb6KNhd6zIqQbKh97OnmNZ', '2016-11-15 02:27:28', '2016-11-29 02:27:59'),
-(2, 'petugas', 'petugas@gmail.com', '$2y$10$hiV4xWdKItSkzs2qS23SM.fuFsrrCItRZhhE1g0X13a40Sqe1kH8.', 'petugas', 1, 'IqkYQhYoTYypZjCLUQ6np4IbVbD4x4wygODMd7i6nNetZkZaO56h14AivcG9', NULL, '2016-12-06 00:34:50'),
-(3, 'pemilik', 'pemilik@gmail.com', '$2y$10$mq8WcHkx.8xwjKvrBQJLEO7JsvXasn9PWTb/xezC6A1iIdDXoHH4a', 'pemilik', 1, 'IfSSD6QOzF9aWCt5UVh7CKl9CH8cjQoqbwC6OaxGVqAud6WEaLLJlKSkeNVM', NULL, '2016-12-05 19:26:01'),
+(1, 'admin', 'admin@gmail.com', '$2y$10$o2fqGzqYmNqHbMIl8DjFUOYCMupWsxf1I9cEa5fg.Tku7Uj62SRJe', 'admin', 1, 'KOBNb9LBs0gsLoiTzoOChqTEYsedZ7ZX5uG1JAPtezgb81kg0MwrBPVjdRor', '2016-11-15 02:27:28', '2016-12-19 03:02:02'),
+(2, 'petugas', 'petugas@gmail.com', '$2y$10$hiV4xWdKItSkzs2qS23SM.fuFsrrCItRZhhE1g0X13a40Sqe1kH8.', 'petugas', 1, '6Pw8DaYGU8LP9AtBAbtBQOSRm2eSCAIW2XIx9cl6GTUPYjoZxevXOKcrEAMp', NULL, '2016-12-19 03:01:25'),
+(3, 'pemilik', 'pemilik@gmail.com', '$2y$10$mq8WcHkx.8xwjKvrBQJLEO7JsvXasn9PWTb/xezC6A1iIdDXoHH4a', 'pemilik', 1, 'r0KtSFDZin6eUTVz97X5Gq6EqMsSvoiNLq2Qfp0W7FcTdt2GGos6dsMmQhei', NULL, '2016-12-18 08:56:19'),
 (4, 'roni', 'roni@gmail.com', '$2y$10$aopPh/j8yzrliXFHIaCI/eVaMEKlH9z7G0qQ3Alx0CpJ5f5anHsLK', 'pemilik', 1, 'keQAk1jS8Szl458TtDjo9VqXcfNNsAl7wT35MA6evjMaPsoE9yh3p9G0i3Ci', '2016-11-17 08:40:09', '2016-11-17 08:47:12'),
-(5, 'coba', 'adi.leptop@gmail.com', '$2y$10$o2fqGzqYmNqHbMIl8DjFUOYCMupWsxf1I9cEa5fg.Tku7Uj62SRJe', 'pemilik', 1, 'lr3c8MYczILNEPPH81Q73dj0gYZGoxuBybUyvn05MwrrQShFl6PcfX6o1GNn', '2016-11-17 09:26:10', '2016-12-05 19:23:59'),
+(5, 'coba', 'adi.leptop@gmail.com', '$2y$10$o2fqGzqYmNqHbMIl8DjFUOYCMupWsxf1I9cEa5fg.Tku7Uj62SRJe', 'pemilik', 1, 'asolEULn0VlpuCC9nFNkiRQK8rGKxUZjFDZv38GcM8AKoZIzw926emPIwcfc', '2016-11-17 09:26:10', '2016-12-18 21:14:43'),
 (6, 'ulya', 'ulya@gmail.com', '$2y$10$zcFtiTngENFSTQt/90SmGue9ZXiHzRT/El8jDgUbONXmA6nj7wGsm', 'pemilik', 1, 'kQsAsHKbIMzPgRRx2ZvCgXbWACCq5PsLh7r2KiLHUC3az59Xs7GbU83hLmg6', '2016-11-18 18:13:01', '2016-11-18 18:14:33'),
 (11, 'aku', 'aku@gmail.com', '$2y$10$Qz.uPwnqojGbxXu4VLW.DeRVpWytRdxMtKB6RldFxmD/y9HD9uDlq', 'petugas', 1, NULL, '2016-11-19 01:19:36', '2016-11-19 01:19:36'),
 (12, 'ulya1994', 'ulya1994@gmail.com', '$2y$10$hiV4xWdKItSkzs2qS23SM.fuFsrrCItRZhhE1g0X13a40Sqe1kH8.', 'petugas', 1, NULL, NULL, NULL),
@@ -670,7 +676,8 @@ INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `active`, `r
 (15, 'marcel', 'marecel@gmail.com', '$2y$10$G.A8Tk2rzgCPfHzbIF0OT.WQwVPqAqnZpNS.rC1k9ng72KpYiQaKi', 'pemilik', 1, NULL, '2016-11-23 19:37:34', '2016-11-23 19:37:34'),
 (17, 'bani', 'bani@gmail.com', '$2y$10$ESaTaJhlw5YUqIr3a4PuFOUrsA70.HUIZCzCahy26byMmBvPygnjG', 'pemilik', 1, 'rY3TEgUaWBNpwQry2RAt5WKUctXbp65WAWO99XcjnllkAFqYfaqBQOSzAk09', '2016-11-28 17:54:10', '2016-11-28 17:57:13'),
 (19, 'kholil', 'kholil@gmail.com', '$2y$10$KZrwjziiy1xVDcz3CCVQueJW22eM2e.E3pRbEUjT7nOsUnSCe/bey', 'pemilik', 1, '7Ng7CB0RHDXhyi7LXRe7NZJyMbR7tmB9Z7ZtDxALnSWkmSdphvaqn0XmDGTI', '2016-12-05 19:00:14', '2016-12-05 20:29:30'),
-(20, 'putratok', 'putra@gmail.com', '$2y$10$8kDxp/HOkJE8BMsl26IqpOjhL7kXOXL14/7YKIAu6x9z82/.g6U4G', 'pemilik', 1, 'eeXzLGLbKSdc08CEQAfEQQ2uZRMcLpZHpzLgYefrGbbZ18jckSl5WlUOoSt6', '2016-12-05 19:36:25', '2016-12-05 19:55:03');
+(20, 'putratok', 'putra@gmail.com', '$2y$10$8kDxp/HOkJE8BMsl26IqpOjhL7kXOXL14/7YKIAu6x9z82/.g6U4G', 'pemilik', 1, 'QE77Hy98WvPQUv5eLNbwPMAfD7UKz10y3WOyVcc8Zvyu5w4uubBebYPuHZM8', '2016-12-05 19:36:25', '2016-12-10 05:19:45'),
+(21, 'arifin', 'arifin@gmail.com', '$2y$10$e486ASpK3sDfKRfk7H8NVeXLslpvEIp8apmgNkfYb8xZp8DtZmARa', 'petugas', 1, '5XMdlOvtomu00W5MH3IS3TGxLEfy1aCKBmFJpNHYQbb85gP1p7hxRmzWv7VE', '2016-12-10 03:50:01', '2016-12-10 05:23:31');
 
 --
 -- Indexes for dumped tables
@@ -778,7 +785,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `fotos`
 --
 ALTER TABLE `fotos`
-  MODIFY `id_foto` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+  MODIFY `id_foto` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `identitas`
 --
@@ -798,7 +805,7 @@ ALTER TABLE `kejadians`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=21;
+  MODIFY `id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=22;
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
